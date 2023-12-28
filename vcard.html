@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .ticket {
+      margin: 50px auto;
+      width: 500px;
+      height: 400px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px #000;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ticket:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 20px 20px 0;
+      border-style: solid;
+      border-color: #fff #fff #bbb #bbb;
+      background: #fff;
+      width: 50px;
+      height: 50px;
+      box-shadow: -1px 1px 1px rgba(0,0,0,0.2);
+      transform: rotate(-45deg);
+      z-index: 1;
+    }
+    .ticket-info {
+      margin-top: 30px;
+    }
+    .ticket-info h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .ticket-info p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <div class="ticket-info">
+      <h1>Rodrigo Ferraz Azevedo</h1>
+      <p>E-mail: rodrigoferrazazevedo@gmail.com</p>
+      <p>Fone: (11) 7070-7070</p>
+      <p>777 Massachusetts Ave;Cambridge;MA;02139-4307;USA</p>
+      <br>
+      <div id="qrcode"></div>
+      <script type="text/javascript">
+        var qrcode = new QRCode("qrcode", {
+            text: "BEGIN:VCARD\n" +
+                "VERSION:3.0\n" +
+                "N:Azevedo;Rodrigo;;Mr.;\n" +
+                "FN:Rodrigo Azevedo\n" +
+                "ORG:EuMesmo Co.\n" +
+                "TITLE:The Boss\n" +
+                "TEL;TYPE=WORK,VOICE:(11) 7070-7070\n" +
+                "ADR;TYPE=WORK:;;777 Massachusetts Ave;Cambridge;MA;02139-4307;USA\n" +
+                "EMAIL;TYPE=PREF,INTERNET:rodrigoferrazazevedo@gmail.com\n" +
+                "END:VCARD",
+            width: 128,
+            height: 128
+        });
+      </script>
+    
+    </div>
+  </div>
+</body>
+</html>
